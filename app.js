@@ -30,10 +30,18 @@ class ChannelList extends React.Component {
 }
 
 class ChannelForm extends React.Component {
+  onChange(e) {
+    console.log(e.target.value);
+  }
+  onSubmit(e) {
+
+  }
   render() {
     return(
-      <form>
-        <input type='text' />
+      <form onSubmit={this.onSubmit.bind(this)}>
+        <input type='text'
+          onChange={this.onChange.bind(this)}
+        />
       </form>
     )
   }

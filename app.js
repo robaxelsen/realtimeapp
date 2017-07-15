@@ -18,9 +18,9 @@ class ChannelList extends React.Component {
   render() {
     return (
       <ul>
-        {this.props.channels.map( channel => {
+        {this.props.channels.map( (channel, i) => {
             return (
-              <Channel name={channel.name} />
+              <Channel name={channel.name} key={i} />
             )
           }
         )}
@@ -41,7 +41,7 @@ class ChannelForm extends React.Component {
     // console.log(e.target.value);
   }
   onSubmit(e) {
-    let channelName = this.state.channelName;
+    let {channelName} = this.state;
     console.log(channelName);
     channels.push({
       name: channelName
